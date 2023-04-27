@@ -1,6 +1,9 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import blogs from "../../content/blogs";
+import "./Blog.css";
+import PageHero from "../../components/PageHero/PageHero";
+import BlogCarousel from "../../components/BlogCarousel/BlogCarousel";
 
 function Blog() {
   const { blogId } = useParams();
@@ -10,7 +13,7 @@ function Blog() {
     return <div>Blog not found.</div>;
   }
 
-  const { title, date, location, content, images } = blog;
+  const { title, date, location, content, hero } = blog;
 
   return (
     <div>
@@ -18,12 +21,11 @@ function Blog() {
       <p>
         {date} - {location}
       </p>
-      <div>
-        {images.map((image, index) => (
-          <img key={index} src={image} alt={`Blog ${blogId} - ${index}`} />
-        ))}
+      <PageHero hero_url={hero} />
+      <div className="blog-content">
+        <pre>{content}</pre>
       </div>
-      <div>{content}</div>
+      <BlogCarousel />
     </div>
   );
 }
