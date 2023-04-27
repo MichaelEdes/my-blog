@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 function BlogCarousel() {
   return (
     <>
-      <h1>Recent Vlogs</h1>
+      <h1>Recent Blogs</h1>
       <div className="blog-grid">
         {blogs
           .sort(() => Math.random() - 0.5)
