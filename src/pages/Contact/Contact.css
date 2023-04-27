@@ -1,6 +1,7 @@
 .form-container {
   background-color: rgb(255, 255, 255);
-  width: 600px;
+  width: 80vw;
+  max-width: 600px;
   box-sizing: border-box;
   padding: 20px 40px;
   border-radius: 30px;
@@ -12,6 +13,7 @@
 .form-container h1 {
   width: 100%;
   text-align: center;
+  font-size: 1.5rem;
 }
 
 .contact-form {
