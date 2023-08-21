@@ -1,16 +1,26 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import blogs from "../../content/blogs";
 import "./Blog.css";
 import PageHero from "../../components/PageHero/PageHero";
 import BlogCarousel from "../../components/BlogCarousel/BlogCarousel";
 
 function Blog() {
   const { blogId } = useParams();
-  const blog = blogs.find((b) => b.id === parseInt(blogId));
+  const [blog, setBlog] = useState(null);
+
+  useEffect(() => {
+    // Assuming your backend is running on port 5000
+    fetch(`http://localhost:5000/article/${blogId}`)
+      .then((response) => {
+        if (!response.ok) throw new Error("Failed to fetch blog.");
+        return response.json();
+      })
+      .then((data) => setBlog(data))
+      .catch((error) => console.error(error));
+  }, [blogId]);
 
   if (!blog) {
-    return <div>Blog not found.</div>;
+    return <div>Loading...</div>;
   }
 
   const { title, date, location, content, hero } = blog;
