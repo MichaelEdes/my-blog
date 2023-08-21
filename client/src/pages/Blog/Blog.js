@@ -9,7 +9,7 @@ function Blog() {
   const [blog, setBlog] = useState(null);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/article/${blogId}`)
+    fetch(`https://michael-tblog-826d014d0fcf.herokuapp.com/articles/${blogId}`)
       .then((response) => {
         if (!response.ok) throw new Error("Failed to fetch blog.");
         return response.json();

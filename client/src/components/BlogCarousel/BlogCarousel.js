@@ -7,7 +7,7 @@ function BlogCarousel() {
   const [blogs, setBlogs] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/articles")
+    fetch("https://michael-tblog-826d014d0fcf.herokuapp.com/articles")
       .then((response) => {
         if (!response.ok) throw new Error("Failed to fetch blogs.");
         return response.json();
