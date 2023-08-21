@@ -6,8 +6,6 @@ function Topics() {
   const [blogs, setBlogs] = useState([]);
 
   useEffect(() => {
-    // Fetch all blogs from the backend.
-    // NOTE: This assumes you have a `/blogs` endpoint in your backend that returns all blogs.
     fetch("http://localhost:5000/blogs")
       .then((response) => {
         if (!response.ok) throw new Error("Failed to fetch blogs.");

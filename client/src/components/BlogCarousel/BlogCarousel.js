@@ -1,10 +1,21 @@
-import React from "react";
-import blogs from "../../content/blogs";
+import React, { useState, useEffect } from "react";
 import BlogCard from "../BlogCard/BlogCard";
 import "./BlogCarousel.css";
 import { Link } from "react-router-dom";
 
 function BlogCarousel() {
+  const [blogs, setBlogs] = useState([]);
+
+  useEffect(() => {
+    fetch("http://localhost:5000/blogs")
+      .then((response) => {
+        if (!response.ok) throw new Error("Failed to fetch blogs.");
+        return response.json();
+      })
+      .then((data) => setBlogs(data))
+      .catch((error) => console.error(error));
+  }, []);
+
   return (
     <>
       <h1>Recent Blogs</h1>

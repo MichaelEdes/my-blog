@@ -9,7 +9,6 @@ function Blog() {
   const [blog, setBlog] = useState(null);
 
   useEffect(() => {
-    // Assuming your backend is running on port 5000
     fetch(`http://localhost:5000/article/${blogId}`)
       .then((response) => {
         if (!response.ok) throw new Error("Failed to fetch blog.");
