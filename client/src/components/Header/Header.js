@@ -8,7 +8,7 @@ function Header() {
       <div className="header">
         <Link to={"/"}>
           <div className="header-logo">
-            Zaid <span>Travels</span>
+            Michael <span>Travels</span>
           </div>
         </Link>
         <Link to={"/Topics"}>Topics</Link>

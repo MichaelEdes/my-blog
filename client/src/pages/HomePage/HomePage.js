@@ -12,7 +12,7 @@ function HomePage() {
         }
         title={"Welcome to my blog"}
       />
-      <h1>Hello, Im Zaid. Welcome to my travelling blog.</h1>
+      <h1>Hello, Im Michael. Welcome to my travelling blog.</h1>
       <div className="blog-intro">
         <pre>
           {`I'm thrilled to have you join me on my incredible journey as I traverse the globe, one adventure at a time. From the bustling cityscapes of urban metropolises to the serene beauty of hidden nature spots, I'm on a mission to explore, learn, and share my experiences with you.
