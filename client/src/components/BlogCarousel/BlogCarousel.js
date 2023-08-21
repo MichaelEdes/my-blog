@@ -7,7 +7,7 @@ function BlogCarousel() {
   const [blogs, setBlogs] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/blogs")
+    fetch("http://localhost:5000/articles")
       .then((response) => {
         if (!response.ok) throw new Error("Failed to fetch blogs.");
         return response.json();
